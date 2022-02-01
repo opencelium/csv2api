@@ -40,7 +40,7 @@ Arguments
 Example Usage
 -------------
 
-All examples use [data from REXUS](https://people.sc.fsu.edu/~jburkardt/data/csv)
+All examples use [data from HERE](https://people.sc.fsu.edu/~jburkardt/data/csv)
 
 ### Get CSV as JSONP (default behavior)
 /csv-to-api/?source=http://www.gsa.gov/dg/data_gov_bldg_star.csv
