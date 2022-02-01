@@ -1,0 +1,46 @@
+CSV to API
+===========
+
+Dynamically generate RESTful APIs from static CSVs. Provides JSON
+
+What Problem This Solves
+------------------------
+
+The simplicity with which CSV files can be created has made them the default data format for bulk data. It is comparatively more difficult to create an API to share the same data atomically and transactionally.
+
+How This Solves It
+------------------
+
+*CSV to API* acts as a filter, sitting between CSV and the browser, allowing users to interact with that CSV as if it was a native API. The column names (that is, the cells that comprise the first row in the file) function as the key names.
+
+Note that this can be run on any server to create an API for any CSV file on any server. There is no need to install *CSV to API* for each unique CSV file or even each unique server—an organization can link to each and every one of their CSV files via *CSV to API*, or an individual could even use their own installation of *CSV to API* to access arbitrary remote CSV files as if they were APIs.
+
+When Alternative PHP Cache (APC) is installed, parsed data is stored within APC, which accellerates  its functionality substantially. While APC is not required, it is recommended highly.
+
+What You Need
+-------------
+
+* JDK 1.8 or later
+* Gradle 6.8+
+
+How To Start
+------------
+
+1. Download and unzip the source repository for this guide, or clone it using Git: git clone https://github.com/opencelium/csv2api
+2. By default, the embedded server starts on port 8080 but you are able to change server.port property in csvtoapi/src/main/resources/application.yml
+3. Go to root folder of the project csvtoapi and type command "gradle build" in terminal 
+4  Switching to /build/libs and then running "java -jar artifactname"
+
+
+Arguments
+---------
+
+* `source`: the URL to the source CSV
+
+Example Usage
+-------------
+
+All examples use [data from REXUS](https://people.sc.fsu.edu/~jburkardt/data/csv)
+
+### Get CSV as JSONP (default behavior)
+/csv-to-api/?source=http://www.gsa.gov/dg/data_gov_bldg_star.csv
