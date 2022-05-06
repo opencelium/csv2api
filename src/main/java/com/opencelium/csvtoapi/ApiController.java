@@ -53,6 +53,8 @@ public class ApiController {
             settings.detectFormatAutomatically();
             CsvParser csvParser = new CsvParser(settings);
             List<String[]> allData = csvParser.parseAll(reader);
+            System.out.println("Parsed Content : " + csvParser.getContext().currentParsedContent());
+            System.out.println("Parsed toString : " + csvParser.toString());
             CsvDocument csv = new CsvDocument(allData);
 
             Format format = getFormat("json");
