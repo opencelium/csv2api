@@ -68,9 +68,9 @@ public class ApiController {
     // getting csv file from source
     private Reader getScvFile(String source) throws Exception {
         InputStream input = new URL(source).openStream();
-        String result = new BufferedReader(new InputStreamReader(input))
-                .lines().collect(Collectors.joining("\n"));
-        System.out.println(result);
+//        String result = new BufferedReader(new InputStreamReader(input))
+//                .lines().collect(Collectors.joining("\n"));
+//        System.out.println(result);
         return new InputStreamReader(input, "UTF-8");
     }
 
