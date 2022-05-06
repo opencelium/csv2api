@@ -1,13 +1,14 @@
 package com.opencelium.csvtoapi;
 
+import com.opencsv.CSVParser;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
+import org.junit.jupiter.params.shadow.com.univocity.parsers.csv.CsvParser;
+import org.junit.jupiter.params.shadow.com.univocity.parsers.csv.CsvParserSettings;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
 import java.net.URL;
@@ -32,10 +33,35 @@ public class ApiController {
 
         try {
             Reader reader = getScvFile(source);
-            CSVReader csvReader  = new CSVReaderBuilder(reader).build();
-            List<String[]> allData = csvReader.readAll();
-            String str = CsvDocument.csvToJson(allData);
-            return ResponseEntity.ok(str);
+            CsvParserSettings settings = new CsvParserSettings();
+            settings.detectFormatAutomatically();
+            CsvParser csvParser = new CsvParser(settings);
+            List<String[]> allData = csvParser.parseAll(reader);
+            CsvDocument csv = new CsvDocument(allData);
+            String data = csv.filter(filter).sort(sort, sort_dir)
+                            .get(format).orElseThrow(() -> new RuntimeException(""));
+            return ResponseEntity.ok(data);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("/test")
+    public ResponseEntity<?> test(@RequestParam("file") MultipartFile file){
+
+        try {
+            Reader reader = getScvFile(file.getInputStream());
+            CsvParserSettings settings = new CsvParserSettings();
+            settings.detectFormatAutomatically();
+            CsvParser csvParser = new CsvParser(settings);
+            List<String[]> allData = csvParser.parseAll(reader);
+            CsvDocument csv = new CsvDocument(allData);
+
+            Format format = getFormat("json");
+            String data = csv.get(format).orElseThrow(() -> new RuntimeException(""));
+            return ResponseEntity.ok(data);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -47,6 +73,10 @@ public class ApiController {
     private Reader getScvFile(String source) throws Exception {
         InputStream input = new URL(source).openStream();
         return new InputStreamReader(input, "UTF-8");
+    }
+
+    private Reader getScvFile(InputStream source) throws Exception {
+        return new InputStreamReader(source, "UTF-8");
     }
 
     private String getFilter(Map<String, String> params) {
