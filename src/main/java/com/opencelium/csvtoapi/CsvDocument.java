@@ -32,9 +32,13 @@ public class CsvDocument {
             System.out.println("values : " + Arrays.toString(values));
             json.append("{");
             for (int j = 0; j < values.length; j++) {
+                String value = values[j];
+                if (value == null) {
+                    value = "";
+                }
                 json.append("\"").append(keys[j].replace("\"", "").replace("\'",""))
                         .append("\"").append(":")
-                        .append("\"").append(values[j].trim().replace("\"","").replace("\'",""))
+                        .append("\"").append(value.trim().replace("\"","").replace("\'",""))
                         .append("\"").append(",");
             }
 
