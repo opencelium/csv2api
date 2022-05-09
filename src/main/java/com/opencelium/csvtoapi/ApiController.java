@@ -26,7 +26,8 @@ public class ApiController {
         String sort = queryParams.get("sort");
         String sort_dir = queryParams.get("sort_dir");
         String filter = getFilter(queryParams);
-
+        
+        System.out.println(queryParams);
         try {
             Reader reader = getScvFile(source);
             CsvParserSettings settings = new CsvParserSettings();
