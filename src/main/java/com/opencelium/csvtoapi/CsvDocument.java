@@ -25,11 +25,11 @@ public class CsvDocument {
 
     public String asJson() {
         String[] keys = csv.get(0);
-        System.out.println("keys : " + Arrays.toString(keys));
+        //System.out.println("keys : " + Arrays.toString(keys));
         StringBuilder json = new StringBuilder("");
         for (int i = 1; i < csv.size(); i++) {
             String[] values = csv.get(i);
-            System.out.println("values : " + Arrays.toString(values));
+            //System.out.println("values : " + Arrays.toString(values));
             json.append("{");
             for (int j = 0; j < values.length; j++) {
                 String value = values[j];

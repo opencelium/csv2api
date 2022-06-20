@@ -23,8 +23,16 @@ public class ApiController {
 
     @GetMapping("/")
     public ResponseEntity<?> get(@RequestParam Map<String, String> queryParams){
-        Arrays.asList(CsvDocument.class.getDeclaredFields()).forEach(f -> System.out.println(f.getName()));
+ //       Arrays.asList(CsvDocument.class.getDeclaredFields()).forEach(f -> System.out.println(f.getName()));
         String source = queryParams.get("source");
+	
+	if (source == null) {
+    		String msg = "{" +
+        	    "'property' : 'Hi! I am the csv2api connector. Please read more about me here https://github.com/opencelium/csv2api'"
+        	    + "}";
+    		return ResponseEntity.ok().body(msg);
+	}
+
         try {
             source = decodeValue(source);
         } catch (UnsupportedEncodingException e) {
