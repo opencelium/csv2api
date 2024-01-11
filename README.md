@@ -34,4 +34,4 @@ Example Usage
 All examples use [data from HERE](https://people.sc.fsu.edu/~jburkardt/data/csv)
 
 ### Get CSV as JSONP (default behavior)
-/csv-to-api/?source=https://people.sc.fsu.edu/~jburkardt/data/csv/deniro.csv
+http://[Csv2APIServer]:8080?source=https://people.sc.fsu.edu/~jburkardt/data/csv/deniro.csv
