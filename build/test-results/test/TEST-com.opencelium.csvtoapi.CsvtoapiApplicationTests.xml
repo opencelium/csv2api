@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.opencelium.csvtoapi.CsvtoapiApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-10-01T10:52:05" hostname="oc-4" time="0.957">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.opencelium.csvtoapi.CsvtoapiApplicationTests" time="0.957"/>
+  <system-out><![CDATA[10:52:00.237 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [CsvtoapiApplicationTests]: using SpringBootContextLoader
+10:52:00.262 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.opencelium.csvtoapi.CsvtoapiApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+10:52:00.270 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.opencelium.csvtoapi.CsvtoapiApplicationTests]: CsvtoapiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+10:52:00.419 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [CsvtoapiApplicationTests]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer]
+10:52:00.819 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/opt/opencelium/services/csv2api/build/classes/java/main/com/opencelium/csvtoapi/CsvtoapiApplication.class]
+10:52:00.827 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.opencelium.csvtoapi.CsvtoapiApplication for test class com.opencelium.csvtoapi.CsvtoapiApplicationTests
+10:52:01.208 [Test worker] DEBUG org.springframework.test.context.util.TestContextSpringFactoriesUtils - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+10:52:01.218 [Test worker] DEBUG org.springframework.test.context.util.TestContextSpringFactoriesUtils - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+10:52:01.229 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [CsvtoapiApplicationTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+10:52:01.234 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [CsvtoapiApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.0)
+
+2025-10-01T10:52:02.441Z  INFO 7205 --- [    Test worker] c.o.csvtoapi.CsvtoapiApplicationTests    : Starting CsvtoapiApplicationTests using Java 17.0.16 with PID 7205 (started by root in /opt/opencelium/services/csv2api)
+2025-10-01T10:52:02.448Z  INFO 7205 --- [    Test worker] c.o.csvtoapi.CsvtoapiApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2025-10-01T10:52:05.423Z  INFO 7205 --- [    Test worker] c.o.csvtoapi.CsvtoapiApplicationTests    : Started CsvtoapiApplicationTests in 4.011 seconds (process running for 7.132)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
