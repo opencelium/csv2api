@@ -1,5 +1,0 @@
-.gradle/
-build/*
-!build/libs/
-/.idea/
-/build/
