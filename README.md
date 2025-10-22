@@ -12,15 +12,32 @@ What You Need
 -------------
 
 * JDK 17 or later
-* Gradle 6.8+
+* * Gradle 6.8+ (optional)
 
 How To Start
 ------------
 
-1. Download and unzip the source repository for this guide, or clone it using Git: `git clone` https://github.com/opencelium/csv2api
-2. By default, the embedded server starts on `port 8080` but you are able to change `server.port` property in csvtoapi/src/main/resources/application.yml
-3. Go to root folder of the project `csvtoapi` and type command `gradle build` in terminal 
-4. Switching to `/build/libs` and then running `java -jar artifactname`
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/opencelium/csv2api.git
+   cd csv2api
+   ```
+
+2. Activate the systemd file and add it to the Autostart:
+
+   ```bash
+   ln -s "$(pwd)"/conf/csv2api.service /etc/systemd/system/csv2api.service
+   systemctl daemon-reload
+   systemctl enable csv2api
+   ```
+
+4. Start the service:
+
+   ```bash
+   systemctl start csv2api
+   ```
 
 
 Arguments
