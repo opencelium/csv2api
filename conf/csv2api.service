@@ -1,0 +1,16 @@
+[Unit]
+Description=CSV2API Service
+After=network.target
+
+[Service]
+[Service]
+Restart=on-failure
+RestartSec=5s
+Type=simple
+
+WorkingDirectory=/opt/opencelium/services/csv2api
+ExecStart=/usr/bin/java -jar /opt/opencelium/services/csv2api/build/libs/csvtoapi-0.0.1.jar
+ExecStop=/bin/kill -15 $MAINPID
+
+[Install]
+WantedBy=multi-user.target
