@@ -9,7 +9,7 @@ RestartSec=5s
 Type=simple
 
 WorkingDirectory=/opt/opencelium/services/csv2api
-ExecStart=/usr/bin/java -jar /opt/opencelium/services/csv2api/build/libs/csvtoapi-0.0.1.jar
+ExecStart=/usr/bin/java -Dserver.port=8000 -jar /opt/opencelium/services/csv2api/build/libs/csvtoapi-0.0.1.jar
 ExecStop=/bin/kill -15 $MAINPID
 
 [Install]
