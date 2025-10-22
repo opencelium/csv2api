@@ -40,15 +40,33 @@ How To Start
    ```
 
 
-Arguments
----------
-
-* `source`: the URL to the source CSV
 
 Example Usage
--------------
+---------
 
 All examples use [data from HERE](https://people.sc.fsu.edu/~jburkardt/data/csv)
 
-### Get CSV as JSONP (default behavior)
+**Get CSV as JSONP (default behavior)**
 http://[Csv2APIServer]:8080?source=https://people.sc.fsu.edu/~jburkardt/data/csv/deniro.csv
+
+**Arguments**
+
+* `source`: the URL to the source CSV
+
+Logging
+---------
+
+The service logs can be viewed via **journalctl**:
+
+```bash
+journalctl -xe -u csv2api -o cat -f
+```
+
+This command shows the live logs (`-f`) of the `csv2api` service.
+
+---
+
+License
+---------
+
+CSV2API is released under the [Apache-2.0 License](LICENSE).
